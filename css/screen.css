@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+main {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 #map-wrap {
 }
 
@@ -42,4 +47,8 @@
 
 #map-wrap td.turtle.turtle--west {
   background-image: url('./../img/turtle-20-west.png');
+}
+
+.editor-wrap {
+  margin-top: 2rem;
 }
