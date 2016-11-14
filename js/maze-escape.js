@@ -79,6 +79,44 @@ $(document).ready(function($) {
     return false;
   }
 
+  Turtle.prototype.rechtsFrei = function() {
+    switch (this.facing) {
+      case NORTH:
+        if (this.y < _map[this.x].length && (_map[this.x][this.y + 1] == ' ' || _map[this.x][this.y + 1] == 'o')) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+
+      case EAST:
+        if (this.x < _map[this.x].length && (_map[this.x + 1][this.y] == ' ' || _map[this.x + 1][this.y] == 'o')) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+
+      case SOUTH:
+        if (this.y > 0 && (_map[this.x][this.y - 1] == ' ' || _map[this.x][this.y - 1] == 'o')) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+
+      case WEST:
+        if (this.x > 0 && (_map[this.x - 1][this.y] == ' ' || _map[this.x - 1][this.y] == 'o')) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+    }
+
+    return false;
+  }
+
   Turtle.prototype.dreheLinks = function() {
     if (this.facing == NORTH) {
       this.facing = WEST;
