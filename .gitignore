@@ -1,0 +1,5 @@
+# Ignore IDE created files and directories
+/.settings
+/.buildpath
+/.project
+/.idea

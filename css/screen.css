@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#map-wrap {
+}
+
+#map-wrap table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#map-wrap td {
+  background-color: white;
+  border: solid 1px black;
+  height: 20px;
+  width: 20px;
+}
+
+#map-wrap td.wall {
+  background-color: darkgrey;
+}
+
+#map-wrap td.exit {
+  background-color: yellow;
+}
+
+#map-wrap td.turtle,
+#map-wrap td.turtle.turtle--north {
+  background-image: url('./../img/turtle-20-north.png');
+}
+
+#map-wrap td.turtle.turtle--east {
+  background-image: url('./../img/turtle-20-east.png');
+}
+
+#map-wrap td.turtle.turtle--south {
+  background-image: url('./../img/turtle-20-south.png');
+}
+
+#map-wrap td.turtle.turtle--west {
+  background-image: url('./../img/turtle-20-west.png');
+}
