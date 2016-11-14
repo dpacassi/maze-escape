@@ -9,6 +9,7 @@ $(document).ready(function($) {
 
   function Turtle() {
     this.facing = EAST;
+    this.origFacing = this.facing;
     this.x = 0;
     this.y = 0;
 
@@ -19,6 +20,8 @@ $(document).ready(function($) {
         if (_map[i][k] == 'T') {
           this.x = i;
           this.y = k;
+          this.origX = this.x;
+          this.origY = this.y;
           _map[i][k] = ' ';
 
           found = true;
@@ -30,6 +33,12 @@ $(document).ready(function($) {
         break;
       }
     }
+  }
+
+  Turtle.prototype.reset = function() {
+    this.x = this.origX;
+    this.y = this.origY;
+    this.facing = this.origFacing;
   }
 
   Turtle.prototype.vornefrei = function() {
@@ -226,4 +235,20 @@ $(document).ready(function($) {
   }
 
   printMap();
+
+  $('#run').click(function() {
+    console.clear();
+    var source = $('#source').val();
+    eval(source);
+  });
+
+  $('#reset').click(function() {
+    console.clear();
+    turtle.reset();
+    printMap();
+  });
+
+
+  window.turtle = turtle;
+  window.printMap = printMap;
 });

@@ -12,8 +12,21 @@
     <main>
       <div id="map-wrap"></div>
 
+      <div class="helper-wrap">
+        <p>Befehle:</p>
+        <pre>turtle.laufe();</pre>
+        <pre>turtle.dreheLinks();</pre>
+        <pre>turtle.dreheRechts();</pre>
+        <pre>turtle.vornefrei();</pre>
+      </div>
+
       <div class="editor-wrap">
-        <textarea></textarea>
+        <textarea id="source"></textarea><br />
+
+        <div class="actions-wrap">
+          <button id="run">Starte</button>
+          <button id="reset">Reset</button>
+        </div>
       </div>
     </main>
   </body>
