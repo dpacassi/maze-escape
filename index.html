@@ -10,27 +10,38 @@
 
   <body>
     <main>
-      <div id="map-wrap"></div>
+      <table class="table-wrap">
+        <tr>
+          <td></td>
+          <td>
+            <div class="helper-wrap">
+              <p>Befehle:</p>
+              <pre>turtle.laufe();</pre>
+              <pre>turtle.dreheLinks();</pre>
+              <pre>turtle.dreheRechts();</pre>
+              <pre>turtle.vorneFrei();</pre>
+              <pre>turtle.linksFrei();</pre>
+              <pre>turtle.rechtsFrei();</pre>
+              <pre>turtle.istAmAusgang();</pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="map-wrap"></div>
+          </td>
+          <td>
+            <div class="editor-wrap">
+              <textarea id="source"></textarea><br />
 
-      <div class="helper-wrap">
-        <p>Befehle:</p>
-        <pre>turtle.laufe();</pre>
-        <pre>turtle.dreheLinks();</pre>
-        <pre>turtle.dreheRechts();</pre>
-        <pre>turtle.vorneFrei();</pre>
-        <pre>turtle.linksFrei();</pre>
-        <pre>turtle.rechtsFrei();</pre>
-        <pre>turtle.istAmAusgang();</pre>
-      </div>
-
-      <div class="editor-wrap">
-        <textarea id="source"></textarea><br />
-
-        <div class="actions-wrap">
-          <button id="run">Starte</button>
-          <button id="reset">Reset</button>
-        </div>
-      </div>
+              <div class="actions-wrap">
+                <button id="run">Starte</button>
+                <button id="reset">Reset</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </main>
   </body>
 </html>

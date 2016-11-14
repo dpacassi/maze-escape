@@ -51,12 +51,13 @@ main {
 
 .helper-wrap {
   display: inline-block;
-  margin: 1rem auto 0;
+  margin: 1rem auto 1rem;
+  padding-left: 1rem;
   text-align: left;
 }
 
 .editor-wrap {
-  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 textarea {
@@ -68,4 +69,13 @@ textarea {
   display: inline-block;
   margin: 0.5rem auto 4rem;
   text-align: left;
+}
+
+.table-wrap {
+  margin: 0 auto;
+}
+
+td {
+  text-align: left;
+  vertical-align: top;
 }
