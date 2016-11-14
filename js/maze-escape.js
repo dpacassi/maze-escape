@@ -332,6 +332,10 @@ $(document).ready(function($) {
     printMap();
   });
 
+  $('#left-rotate').click(function() {
+    turtle.dreheLinks();
+    turtle.dreheLinks();
+  });
 
   window.turtle = turtle;
   window.printMap = printMap;
