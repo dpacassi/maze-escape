@@ -41,10 +41,10 @@ $(document).ready(function($) {
     this.facing = this.origFacing;
   }
 
-  Turtle.prototype.vornefrei = function() {
+  Turtle.prototype.vorneFrei = function() {
     switch (this.facing) {
       case NORTH:
-        if (this.x > 0 && _map[this.x - 1][this.y] == ' ') {
+        if (this.x > 0 && (_map[this.x - 1][this.y] == ' ' || _map[this.x - 1][this.y] == 'o')) {
           return true;
         } else {
           return false;
@@ -52,7 +52,7 @@ $(document).ready(function($) {
         break;
 
       case EAST:
-        if (this.y < _map[this.x].length && _map[this.x][this.y + 1] == ' ') {
+        if (this.y < _map[this.x].length && (_map[this.x][this.y + 1] == ' ' || _map[this.x][this.y + 1] == 'o')) {
           return true;
         } else {
           return false;
@@ -60,7 +60,7 @@ $(document).ready(function($) {
         break;
 
       case SOUTH:
-        if (this.x < _map[this.x].length && _map[this.x + 1][this.y] == ' ') {
+        if (this.x < _map[this.x].length && (_map[this.x + 1][this.y] == ' ' || _map[this.x + 1][this.y] == 'o')) {
           return true;
         } else {
           return false;
@@ -68,7 +68,7 @@ $(document).ready(function($) {
         break;
 
       case WEST:
-        if (this.y > 0 && _map[this.x][this.y - 1] == ' ') {
+        if (this.y > 0 && (_map[this.x][this.y - 1] == ' ' || _map[this.x][this.y - 1] == 'o')) {
           return true;
         } else {
           return false;
@@ -102,7 +102,7 @@ $(document).ready(function($) {
   Turtle.prototype.laufe = function() {
     switch (this.facing) {
       case NORTH:
-        if (this.x > 0 && _map[this.x - 1][this.y] == ' ') {
+        if (this.x > 0 && (_map[this.x - 1][this.y] == ' ' || _map[this.x - 1][this.y] == 'o')) {
           this.x--;
         } else {
           console.error('Hindernis :(');
@@ -110,7 +110,7 @@ $(document).ready(function($) {
         break;
 
       case EAST:
-        if (this.y < _map[this.x].length && _map[this.x][this.y + 1] == ' ') {
+        if (this.y < _map[this.x].length && (_map[this.x][this.y + 1] == ' ' || _map[this.x][this.y + 1] == 'o')) {
           this.y++;
         } else {
           console.error('Hindernis :(');
@@ -118,7 +118,7 @@ $(document).ready(function($) {
         break;
 
       case SOUTH:
-        if (this.x < _map[this.x].length && _map[this.x + 1][this.y] == ' ') {
+        if (this.x < _map[this.x].length && (_map[this.x + 1][this.y] == ' ' || _map[this.x + 1][this.y] == 'o')) {
           this.x++;
         } else {
           console.error('Hindernis :(');
@@ -126,7 +126,7 @@ $(document).ready(function($) {
         break;
 
       case WEST:
-        if (this.y > 0 && _map[this.x][this.y - 1] == ' ') {
+        if (this.y > 0 && (_map[this.x][this.y - 1] == ' ' || _map[this.x][this.y - 1] == ' ')) {
           this.y--;
         } else {
           console.error('Hindernis :(');
@@ -135,6 +135,14 @@ $(document).ready(function($) {
     }
 
     printMap();
+  }
+
+  Turtle.prototype.istAmAusgang = function() {
+    if (_map[this.x][this.y] == 'o') {
+      return true;
+    }
+
+    return false;
   }
 
   var _map = [
