@@ -71,12 +71,61 @@ $(document).ready(function($) {
   }
 
   Turtle.prototype.dreheLinks = function() {
+    if (this.facing == NORTH) {
+      this.facing = WEST;
+    } else {
+      this.facing--;
+    }
+
+    printMap();
   }
 
   Turtle.prototype.dreheRechts = function() {
+    if (this.facing == WEST) {
+      this.facing = NORTH;
+    } else {
+      this.facing++;
+    }
+
+    printMap();
   }
 
   Turtle.prototype.laufe = function() {
+    switch (this.facing) {
+      case NORTH:
+        if (this.x > 0 && _map[this.x - 1][this.y] == ' ') {
+          this.x--;
+        } else {
+          console.error('Hindernis :(');
+        }
+        break;
+
+      case EAST:
+        if (this.y < _map[this.x].length && _map[this.x][this.y + 1] == ' ') {
+          this.y++;
+        } else {
+          console.error('Hindernis :(');
+        }
+        break;
+
+      case SOUTH:
+        if (this.x < _map[this.x].length && _map[this.x + 1][this.y] == ' ') {
+          this.x++;
+        } else {
+          console.error('Hindernis :(');
+        }
+        break;
+
+      case WEST:
+        if (this.y > 0 && _map[this.x][this.y - 1] == ' ') {
+          this.y--;
+        } else {
+          console.error('Hindernis :(');
+        }
+        break;
+    }
+
+    printMap();
   }
 
   var _map = [
@@ -177,7 +226,4 @@ $(document).ready(function($) {
   }
 
   printMap();
-
-  var frei = turtle.vornefrei();
-  console.log(frei);
 });
