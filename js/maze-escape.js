@@ -322,7 +322,7 @@ $(document).ready(function($) {
 
   $('#run').click(function() {
     console.clear();
-    var source = $('#source').val();
+    var source = window.editor.getValue();
     eval(source);
   });
 

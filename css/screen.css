@@ -60,7 +60,8 @@ main {
   margin-left: 1rem;
 }
 
-textarea {
+#editor {
+  border: solid 1px #000000;
   height: 300px;
   width: 700px;
 }

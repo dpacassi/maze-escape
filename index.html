@@ -32,8 +32,9 @@
           </td>
           <td>
             <div class="editor-wrap">
-              <textarea id="source"></textarea><br />
-
+              <div id="editor">// Gib hier dein Code ein, z.B.:
+turtle.laufe();
+</div>
               <div class="actions-wrap">
                 <button id="run">Starte</button>
                 <button id="reset">Reset</button>
@@ -44,5 +45,12 @@
         </tr>
       </table>
     </main>
+
+    <script src="dist/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      window.editor = ace.edit('editor');
+      window.editor.setTheme('ace/theme/github');
+      window.editor.getSession().setMode('ace/mode/javascript');
+    </script>
   </body>
 </html>
